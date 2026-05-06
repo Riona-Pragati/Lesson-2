@@ -1,0 +1,29 @@
+Last login: Wed May  6 18:58:58 on ttys000
+anantha-6459@anantha-6459 ~ % sqlite3
+SQLite version 3.51.0 2025-06-12 13:14:41
+Enter ".help" for usage hints.
+Connected to a transient in-memory database.
+Use ".open FILENAME" to reopen on a persistent database.
+sqlite> .open Employees.db
+sqlite> CREATE TABLE Employees(employee_id INTEGER, full_name TEXT, department TEXT, salary INTEGER);
+sqlite> INSERT INTO Employees VALUES(1, 'Alice Johnson', 'HR', 52000);
+sqlite> INSERT INTO Employees VALUES(2, 'Mark Smith', 'HR', 48000);
+sqlite> INSERT INTO Employees VALUES(3, 'John Carter', 'IT', 75000);
+sqlite> INSERT INTO Employees VALUES(4, 'Emily Davis', 'IT', 82000);
+sqlite> INSERT INTO Employees VALUES(5, 'Michael Brown', 'IT', 68000)
+sqlite> INSERT INTO Employees VALUES(6, 'Sarah Wilson', 'Finance', 90000);
+sqlite> INSERT INTO Employees VALUES(7, 'David Lee', 'Finance', 87000);
+sqlite> INSERT INTO Employees VALUES(8, 'Karen White', 'Marketing', 45000);
+sqlite> INSERT INTO Employees VALUES(9, 'Paul Green', 'Marketing', 47000);
+sqlite> INSERT INTO Employees VALUES(10, 'Linda Black', 'Finance', 91000);
+sqlite> SELECT COUNT(full_name) AS Amount_name FROM Employees;
+10
+sqlite> SELECT AVG(salary) AS Average_salary FROM Employees;
+68500.0
+sqlite> SELECT SUM(salary) AS Total_salary FROM Employees;
+685000
+sqlite> SELECT * FROM employees GROUP BY department HAVING salary > 50000;
+1|Alice Johnson|HR|52000
+3|John Carter|IT|75000
+6|Sarah Wilson|Finance|90000
+sqlite>
